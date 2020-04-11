@@ -32,9 +32,9 @@ def ball_move():
 		vel_ball[0] = random.randrange(-3, 3) 
 		vel_ball[1] = random.randrange(-2, 2) 
 		if vel_ball[0] == 0:
-			vel_ball[0] = random.randrange(-3, 3)
+			vel_ball[0] = random.randrange(1, 3)
 		if vel_ball[1] == 0:
-			vel_ball[1] = random.randrange(-2, 2)
+			vel_ball[1] = random.randrange(1, 2)
 		init_position[0] = width/2
 		init_position[1] = height/2 
 
@@ -97,12 +97,7 @@ def draw(canvas):
 		mov2 = pad_height - (height/2)
 	if ((height/2)+pad_height+mov2)>height:
 		mov2 = height - pad_height - (height/2)
-	
-	
-	
-	
-	
-	
+		
 	ball_move()
 	
 
