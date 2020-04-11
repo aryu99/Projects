@@ -15,6 +15,20 @@ correct_cards_pos = []
 card_no_ls = []
 flag = 0 #for mouseclicks
 
+def reset():
+	global flag, card_no, draw_flag, card_compare, correct_cards, correct_cards_pos, card_no_ls
+	flag = 0
+	card_lines = []
+	card_no = 0 # so that draw handler knows which card number to draw
+	draw_flag = 0 # so that first card gets drawn only after first click
+	card_compare = [0, 0] #for comparing two consecutive card clicks
+	correct_cards = []
+	correct_cards_pos = []
+	card_no_ls = []
+	random.shuffle(deck)
+	
+
+
 def shuffle():
 	global deck, card_lines
 	random.shuffle(deck)
@@ -108,6 +122,7 @@ def draw(canvas):
 
 frame = simplegui.create_frame("Memory Game", width, height)
 frame.set_draw_handler(draw)
+frame.add_button("Reset", reset)
 frame.set_mouseclick_handler(click)
 
 shuffle()
