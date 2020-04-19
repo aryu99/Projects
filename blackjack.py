@@ -65,14 +65,15 @@ class Hand:
     	aces = False
 
     	for cards in self.hand_card:
-    		value += VALUES(cards.get_rank())
+    		value += VALUES[cards.get_rank()]
     		if (cards.get_rank() == 'A'):
-    			aces = true
+    			aces = True
 
-    	if aces == true:
-    		if (value + 10 <= 21):
-    			value += 10
-    			return value
+    	if not aces:
+    		return value
+    	else:
+    		if value + 10 <= 21:
+    			return value + 10
     		else:
     			return value
 
@@ -103,11 +104,10 @@ class Deck:
 
 
     def shuffle(self):
-    	self.pos_cards = 0
     	random.shuffle(self.deck)
 
     def deal_card(self):
-        self.deck.pop(0)	# deal a card object from the deck
+        return self.deck.pop(0)	# deal a card object from the deck
     
     def __str__(self):
     	result = ""
@@ -125,13 +125,15 @@ def deal():
 	player_hand.hand_card = []
 	dealer_hand.hand_card = []
 
-	game_number += 0
+	game_number += 1
 
 	player_hand.add_card(deck.deal_card())
 	player_hand.add_card(deck.deal_card())
 
 	dealer_hand.add_card(deck.deal_card())
 	dealer_hand.add_card(deck.deal_card())
+
+	print(player_hand)
 
 	if in_play:
 		score -= 1
@@ -145,13 +147,13 @@ def hit():
 	global score, in_play, outcome, player_hand, deck, outcome
 
 	if in_play:
-		player_hand.add_card(deck.deal_card)
+		player_hand.add_card(deck.deal_card())
 		if player_hand.get_value() <= 21:
 			outcome = "Hit or Stand?"
 		else:
 			outcome = "You got busted!"
 			score -= 1
-			in_play = false
+			in_play = False
 
 
 def stand():
@@ -163,7 +165,7 @@ def stand():
 			outcome = "You got busted!"
 		else:
 			while dealer_hand.get_value() < 17:
-				dealer_hand.add_card(deck.deal_card)
+				dealer_hand.add_card(deck.deal_card())
 			if dealer_hand.get_value() > 21:
 				outcome = "Dealer went bust! You won!"
 				score += 1
@@ -181,7 +183,7 @@ def stand():
 
 def draw(canvas):
     # test to make sure that card.draw works, replace with your code below
-    canvas.draw_text("Blackjack", [230, 25], 30, "Blue")
+    canvas.draw_text("Blackjack", [230, 25], 30, "Red")
 
     # draw text
     canvas.draw_text("Player", [10, 45], 24, "Black")
@@ -211,6 +213,7 @@ deck = Deck()
 # get things rolling
 deal()
 frame.start()
+
 
 
 
