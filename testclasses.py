@@ -187,3 +187,18 @@
 # one_card = Card('S', '6')
 
 # frame.start()
+
+def solution(nums, target):
+    sol_list = []
+    
+    for number in nums:
+        if number <= target:
+            sol_list.append(number)
+            
+    for element in sol_list:
+        list(sol_list).remove(element)
+        for piece in list(sol_list):
+            if element + piece == target:
+                return (nums.index(element), nums.index(piece))
+        
+print (solution([2, 7, 11, 15], 17))
