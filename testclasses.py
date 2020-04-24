@@ -188,17 +188,22 @@
 
 # frame.start()
 
-def solution(nums, target):
-    sol_list = []
+# def solution(nums, target):
+#     sol_list = []
     
-    for number in nums:
-        if number <= target:
-            sol_list.append(number)
+#     for number in nums:
+#         if number <= target:
+#             sol_list.append(number)
             
-    for element in sol_list:
-        list(sol_list).remove(element)
-        for piece in list(sol_list):
-            if element + piece == target:
-                return (nums.index(element), nums.index(piece))
+#     for element in sol_list:
+#         list(sol_list).remove(element)
+#         for piece in list(sol_list):
+#             if element + piece == target:
+#                 return (nums.index(element), nums.index(piece))
         
-print (solution([2, 7, 11, 15], 17))
+# print (solution([2, 7, 11, 15], 17))
+
+a = [0, 1, 2, 3, 6]
+
+a[3] = 19
+print (a)
