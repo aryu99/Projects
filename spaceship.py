@@ -3,13 +3,13 @@ import SimpleGUICS2Pygame.simpleguics2pygame as simplegui
 import math
 import random
 
-# globals for user interface
-WIDTH = 800
-HEIGHT = 600
-score = 0
-lives = 3
-time = 0
-started = False
+# globals for user interface 
+WIDTH = 800 
+HEIGHT = 600 
+score = 0 
+lives = 3 
+time = 0 
+started = False 
 high_score = 0
 
 def restart():
@@ -176,7 +176,7 @@ class Ship:
             ship_thrust_sound.rewind()
             
 
-        print (self.thrust)
+        # print (self.thrust)
 
     def missile(self):
         global missile_group
