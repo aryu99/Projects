@@ -188,17 +188,61 @@
 
 # frame.start()
 
-def solution(nums, target):
-    sol_list = []
-    
-    for number in nums:
-        if number <= target:
-            sol_list.append(number)
-            
-    for element in sol_list:
-        list(sol_list).remove(element)
-        for piece in list(sol_list):
-            if element + piece == target:
-                return (nums.index(element), nums.index(piece))
+# def solution(nums, target):
+#     sol_list = list(nums)
+#         for element in nums:
+#             sol_list.remove(element)
+#             for piece in sol_list:
+#                 if element + piece == target:
+#             	    x = nums.index(element)
+#             	    nums.remove(element)
+#             	    y = nums.index(piece) + 1
+#             	    return (x, y)	
+
         
-print (solution([2, 7, 11, 15], 17))
+# print (solution([-1,3,6], 5))
+
+# def solution(nums, target):
+# 	copy = list(nums)
+# 	for num in nums:
+# 		copy.remove(num)
+	
+# 		try:
+# 			return (nums.index(num), copy.index(target - num) + 1)
+			
+# 		except:
+# 			copy = list(nums)
+
+		
+
+# print(solution([3,3,6], 6))
+
+# h = [1,2,3,4,5]
+
+# if h.index(5) == True:
+# 	print('h')
+# def solution(nums, target):
+# 	copy = list(nums)
+# 	for num in list(nums):
+# 		nums.remove(num)
+
+# 		if (target - num) in nums
+		
+	
+# 		try:
+# 			return (nums.index(num), copy.index(target - num) + 1)
+			
+# 		except:
+# 			copy = list(nums)
+
+		
+
+# print(solution([3,3,6], 6))
+
+j = [1,2,3,4,5]
+
+for i in list(j):
+	list(j).remove(i)
+print (list(j))	
+print(j)
+
