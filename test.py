@@ -221,21 +221,24 @@
 
 # if h.index(5) == True:
 # 	print('h')
-def solution(nums, target):
-	for num in list(nums):
+# def solution(nums, target):
+# 	for num in list(nums):
 		
-		nums.remove(num)
-		if (target - num) in nums:
+# 		nums.remove(num)
+# 		if (target - num) in nums:
 
 
 	
 	
-		try:
-				return (nums.index(num), copy.index(target - num) + 1)
+# 		try:
+# 				return (nums.index(num), copy.index(target - num) + 1)
 			
-		except:
-			copy = list(nums)
+# 		except:
+# 			copy = list(nums)
 
 		
 
-print(solution([3,3,6], 6))
+# print(solution([3,3,6], 6))
+
+list = [[1,2],[1,3]]
+print(list[1][1])
