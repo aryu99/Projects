@@ -240,5 +240,13 @@
 
 # print(solution([3,3,6], 6))
 
-list = [[1,2],[1,3]]
-print(list[1][1])
+# list = [[1,2],[1,3]]
+# print(list[0][1])
+
+
+# f = 3.1123
+# print (f)
+a = [1, 2]
+b = a
+b[0] = 4
+print (a)
